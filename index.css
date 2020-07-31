@@ -32,6 +32,7 @@
 
     width: 85%;
     height: 7em;
+    border-radius: 1em;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
@@ -47,7 +48,7 @@
 .footer {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
     padding-top: 2em;
@@ -70,9 +71,5 @@
     .grid-box {
         width: 10em;
         height: 10em;
-    }
-
-    .footer {
-        position: absolute;
     }
 }
