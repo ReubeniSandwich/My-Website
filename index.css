@@ -6,11 +6,12 @@
 }
 
 .header {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    padding: 1em;
+    padding-bottom: 2em;
 
-    padding: 2em;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-family: 'Montserrat', sans-serif;
 
 }
@@ -21,7 +22,7 @@
     justify-content: center;
     align-items: center;
 
-    row-gap: 2em;
+    row-gap: 1.5em;
 }
 
 .grid-box {
@@ -29,8 +30,8 @@
     justify-content: center;
     align-items: center;
 
-    width: 90%;
-    height: 8em;
+    width: 85%;
+    height: 7em;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
