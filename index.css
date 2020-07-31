@@ -35,6 +35,11 @@
     background-color: hsl(0, 0%, 0%);
 }
 
+.grid-box:hover {
+    background-color: blue;
+    /* transition: ease-in; */
+    transition-duration: 1s;
+}
 
 .footer {
     display: flex;
