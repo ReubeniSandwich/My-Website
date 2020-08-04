@@ -8,7 +8,20 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div id="moon-object"></div>
+    
+    
+    <main class="master-moon-flex">
+
+        <div class="moon-object"></div>
+        
+        <form class="moon-quiz-form" onsubmit="moonQuiz()">
+            <label for="quantity"><b>Moon Fill Percentage</b></label>
+            <input type="number" class="moon-number-input" name="moon-fill" min="0" max="100">
+            <input type="submit"> 
+        </form>
+        
+        <div class="moon-quiz-result"></div>
+    </main>
 </body>
 
 </html>
