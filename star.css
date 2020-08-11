@@ -32,5 +32,6 @@
     /* fill: pink; */
     fill: #0e0a14;
     stroke: none;
-    height: 25vh;
+    min-height: 10vh;
+    /* height: 25vh; */
 }
