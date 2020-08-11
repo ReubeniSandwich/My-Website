@@ -13,6 +13,8 @@
 .background-element {
     display: flex; 
     width: 100%;
+    /* ======= WEIRD BUG. Using VH in the parent container means that 
+    the SVG child will not display in chromium | chrome (?) | Mobile  chrome web browser */
     height: 60vh;
     background: rgb(29,29,67);
     background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 70%, rgba(104,54,61,1) 100%);
@@ -32,7 +34,5 @@
     /* fill: pink; */
     fill: #0e0a14;
     stroke: none;
-    min-height: 10vh;
     max-height: 25vh;
-    /* height: 25vh; */
 }
