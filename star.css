@@ -33,5 +33,6 @@
     fill: #0e0a14;
     stroke: none;
     min-height: 10vh;
+    max-height: 25vh;
     /* height: 25vh; */
 }
