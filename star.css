@@ -3,27 +3,33 @@
     padding: 0;
 }
 
-
+.homepage-splashscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .background-element {
-    display: block; 
+    display: flex; 
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     background: rgb(29,29,67);
-    background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 75%, rgba(104,54,61,1) 100%);
+    background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 70%, rgba(104,54,61,1) 100%);
 }
 
 .background-element-two  {
+    width: 100%;
     background-color: #0e0a14;
-    display: block;
-    height: 50vh;
-
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 40vh;
 }
 
 .svg-trees {
-    position: absolute;
-    top: 39vh;
-    left: -100px;
+    align-self: flex-end;
+    /* fill: pink; */
     fill: #0e0a14;
     stroke: none;
 }
