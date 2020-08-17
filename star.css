@@ -4,19 +4,32 @@
 }
 
 .homepage-splashscreen {
-    display: flex;
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
+
+.homepage-splashscreen {
+
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    /* height: calc(var(--vh, 1vh) * 100); */
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .background-element {
     display: flex; 
     width: 100%;
+    height: 50%;
     /* ======= WEIRD BUG. Using VH in the parent container means that 
     the SVG child will not display in safari | chromium | chrome | Mobile  chrome web browser 
     only seems to work in firefox */
-    height: 60vh;
     background: rgb(29,29,67);
     background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 70%, rgba(104,54,61,1) 100%);
 }
@@ -28,23 +41,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+    height: 50%;
     color: white;
 }
 
 
 .svg-trees {
     position: absolute;
-    /* fill: pink; */
-    fill: #0e0a14;
+    fill: pink;
+    /* fill: #0e0a14; */
     stroke: none;
     max-height: 25vh;
-    bottom: 40vh;
+    bottom: 50%;
 }
 
 .main-body {
 
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     /* background-color: #0e0a14; */
     background-color: white;
