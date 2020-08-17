@@ -14,7 +14,8 @@
     display: flex; 
     width: 100%;
     /* ======= WEIRD BUG. Using VH in the parent container means that 
-    the SVG child will not display in chromium | chrome (?) | Mobile  chrome web browser */
+    the SVG child will not display in safari | chromium | chrome | Mobile  chrome web browser 
+    only seems to work in firefox */
     height: 60vh;
     background: rgb(29,29,67);
     background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 70%, rgba(104,54,61,1) 100%);
@@ -24,15 +25,63 @@
     width: 100%;
     background-color: #0e0a14;
     display: flex;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 40vh;
+    color: white;
 }
 
+
 .svg-trees {
-    align-self: flex-end;
+    position: absolute;
     /* fill: pink; */
     fill: #0e0a14;
     stroke: none;
     max-height: 25vh;
+    bottom: 40vh;
+}
+
+.main-body {
+
+    height: 100vh;
+    width: 100%;
+    /* background-color: #0e0a14; */
+    background-color: white;
+}
+
+.arrows {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: #ffffff;
+	fill: transparent;
+	stroke-width: 3px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0; transform:translateY(10px)}
+80% {opacity:1; transform:translateY(50px)}
+100% {opacity:0; transform:translateY(50px)}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0; transform:translateY(10px)}
+80% {opacity:1; transform:translateY(50px)}
+100% {opacity:0; transform:translateY(50px)}
+}
+
+.arrows path.a1 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari and Chrome */
 }
