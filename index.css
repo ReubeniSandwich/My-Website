@@ -23,12 +23,12 @@ font-family: 'Montserrat', sans-serif;
 
 .grid-master {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-between;
     align-items: center;
-
-    row-gap: 1.5em;
     text-decoration: none;
+    flex-wrap: wrap;
 
 }
 
@@ -40,6 +40,7 @@ font-family: 'Montserrat', sans-serif;
     width: 85%;
     height: 7em;
     border-radius: 1em;
+    margin: 1em;
 
     font-size: 1.25rem;
     color: hsl(0, 0%, 100%);
@@ -59,7 +60,7 @@ font-family: 'Montserrat', sans-serif;
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 2em;
+    /* padding-top: 2em; */
   }
 
 
@@ -70,18 +71,12 @@ font-family: 'Montserrat', sans-serif;
         justify-content: initial;
         font-size: 1.25rem;
     }
-    
-    .grid-master {
-        flex-direction: row;
-        column-gap: 2em;
-    }
 
-    .grid-box {
-        width: 10em;
-        height: 10em;
+    .grid-box, .grid-box:link, .grid-box:visited {
+        width: 25vw;
+        height: 25vh;
     }
 }
-
 /* || Moon.html CSS || */
 
 .moon-object{
@@ -121,4 +116,3 @@ font-family: 'Montserrat', sans-serif;
         row-gap: 2em;
         /* column-gap: 15em; */
     }
-    
