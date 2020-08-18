@@ -26,7 +26,7 @@
 .background-element {
     display: flex; 
     width: 100%;
-    height: 50%;
+    height: 40%;
     /* ======= WEIRD BUG. Using VH in the parent container means that 
     the SVG child will not display in safari | chromium | chrome | Mobile  chrome web browser 
     only seems to work in firefox */
@@ -41,7 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: 60%;
     color: white;
 }
 
@@ -52,7 +52,7 @@
     /* fill: #0e0a14; */
     stroke: none;
     max-height: 22vh;
-    bottom: 50%;
+    bottom: 60%;
 }
 
 .main-body {
