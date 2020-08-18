@@ -1,14 +1,7 @@
-const homepage = document.querySelector(".homepage-splashscreen");
-let screenHeight = window.innerHeight;
-
-homepage.style.setProperty("height", `${screenHeight}px`);
-
-// function updateScreenSize () {
-//     screenHeight = window.innerHeight;
-//     homepage.style.setProperty("height", `${screenHeight}px`);
-//     console.log(screenHeight);
-// }
-// window.addEventListener("resize", updateScreenSize);
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 

@@ -14,9 +14,9 @@
   }
 
 .homepage-splashscreen {
-    
-     /* Fallback for browsers that do not support Custom Properties */
-    /* height: calc(var(--vh, 1vh) * 100); */
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        
     /* display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
     fill: #0e0a14;
     stroke: none;
     max-height: 20vh;
-    bottom: 40%;
+    bottom: 39%;
 }
 
 .main-body {
