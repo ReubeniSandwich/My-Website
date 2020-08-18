@@ -1,16 +1,20 @@
 * {
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+}
 
-    font-family: 'Montserrat', sans-serif;
+body {
+margin: 0px;
+padding: 0px;
+border: 0px;
+
+font-family: 'Montserrat', sans-serif;
+
 }
 
 
-.header {
-    /* display: flex; */
-    /* justify-content: center; */
+.header-container {
+    display: flex;
+    justify-content: center;
     padding: 1em;
     padding-bottom: 2em;
 
@@ -24,9 +28,11 @@
     align-items: center;
 
     row-gap: 1.5em;
+    text-decoration: none;
+
 }
 
-.grid-box {
+.grid-box, .grid-box:link, .grid-box:visited {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +44,9 @@
     font-size: 1.25rem;
     color: hsl(0, 0%, 100%);
     background-color: hsl(0, 0%, 0%);
+    text-decoration: none;
 }
+
 
 .grid-box:hover {
     background-color: blue;
@@ -74,6 +82,7 @@
     }
 }
 
+/* || Moon.html CSS || */
 
 .moon-object{
 
