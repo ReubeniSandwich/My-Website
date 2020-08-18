@@ -10,10 +10,10 @@
 
 <body>
     
-    <header class="homepage-splashscreen">
+    <header class="header-container">
 
         <!-- Tree Line -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="svg-trees" version="1.0" viewBox="0 0 1280 680" preserveAspectRatio="xMidYMid meet">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-tree-shape" version="1.0" viewBox="0 0 1280 680" preserveAspectRatio="xMidYMid meet">
         <metadata>
             Created by potrace 1.15, written by Peter Selinger 2001-2017
         </metadata>
@@ -32,8 +32,8 @@
         </g>
         </svg>
 
-        <!-- Sky Box -->
-        <span class="background-element">
+        <!-- Sky Box with Constellations -->
+        <span class="header-skybox">
             <svg id="svgCanvas" viewbox="0 0 500 500" preserveAspectRatio="xMinYMin slice" width="250px" height="250px">
                 <!-- rotation (rotation amount, where you want it to rotate from, where you want it to rotate from) ... only use first parameter if you want it to rotate at it's center-->
                 <g class="big-dipper" fill="white" transform="rotate(20,10,10)">
@@ -71,13 +71,13 @@
         </span>
 
         <!-- Black Box -->
-        <span class="background-element-two"> 
+        <span class="header-blackbox"> 
             <h1>Reuben Sanchez</h1>
             <svg class="arrows"> <path stroke-linecap="round" class="a1" d="M0 0 L20 22 L40 0"></path></svg>
         </span>
     </header>
 
-    <main class="main-body">Words Words</main>
+    <main class="main-container">Words Words</main>
 
 </body>
 <script type="text/javascript" src="starScript.js"></script>
