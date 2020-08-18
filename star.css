@@ -6,6 +6,7 @@ body {
     margin: 0px;
     padding: 0px;
     /* border: 0px; */    
+    color: #D7D9CE
 }
 
 /* || Header / SplashScreen || */
@@ -26,7 +27,7 @@ body {
 .header-skybox {
     display: flex;
     width: 100%;
-    height: 60%;
+    height: 80%;
 
     background: rgb(29,29,67);
     background: linear-gradient(180deg, rgba(29,29,67,1) 0%, rgba(63,55,111,1) 70%, rgba(104,54,61,1) 100%);
@@ -34,20 +35,23 @@ body {
 
 .header-blackbox  {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
-    height: 40%;
+    height: 10%;
     
     background-color: #0e0a14;
-    color: white;
+}
+
+.header-blackbox.splashname {
+    font-style: italic;
 }
 
 .svg-tree-shape {
     position: absolute;
     max-height: 18vh;
-    bottom: 39.9%;
+    bottom: 19.9%;
     fill: #0e0a14;
     stroke: none;
     /* fill: pink; */
