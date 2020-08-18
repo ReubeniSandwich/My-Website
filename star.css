@@ -3,19 +3,14 @@
     padding: 0;
 }
 
-.homepage-splashscreen {
-    min-height: 100vh;
-    /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;
-  }
-  
-  html {
-    height: -webkit-fill-available;
-  }
+
 
 .homepage-splashscreen {
         height: 100vh; /* Fallback for browsers that do not support Custom Properties */
         height: calc(var(--vh, 1vh) * 100);
+
+            /* mobile viewport bug fix */
+    /* min-height: -webkit-fill-available; */
         
     /* display: flex;
     justify-content: center;
