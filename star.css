@@ -1,12 +1,14 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     margin: 0px;
     padding: 0px;
     /* border: 0px; */    
-    color: #D7D9CE
+    color: #D7D9CE;
+    overflow-x: hidden;
 }
 
 /* || Header / SplashScreen || */
@@ -48,13 +50,30 @@ body {
     font-style: italic;
 }
 
-.svg-tree-shape {
+/* .svg-tree-container {
+    display: flex; 
+    overflow: hidden; 
+    justify-content: space-evenly;
     position: absolute;
     max-height: 18vh;
     bottom: 39.9%;
+    
+    height: 18vh;
+     width: 100%;
+    overflow: hidden;
+} */
+
+.svg-tree-shape {
+    position: absolute;
+    max-height: 18vh;
+    height: 18vh;
+    bottom: 39.9%;
+    /* width: 100%; */
+    /* max-width: 100%; */
     fill: #0e0a14;
     stroke: none;
     /* fill: pink; */
+    overflow: scroll;
 }
 
 
