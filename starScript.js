@@ -1,7 +1,12 @@
+let width = document.documentElement.clientWidth;
+let height = document.documentElement.clientHeight;
+
+
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
-let height = window.innerHeight;
-let width = window.innerWidth;
+
+
+console.log({height, width});
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 

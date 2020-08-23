@@ -16,7 +16,7 @@ body {
 
 .header-container {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
         
@@ -65,7 +65,7 @@ body {
 
 .svg-tree-shape {
     position: absolute;
-    max-height: 18vh;
+    /* max-height: 18vh; */
     height: 18vh;
     bottom: 39.9%;
     /* width: 100%; */
@@ -73,7 +73,7 @@ body {
     fill: #0e0a14;
     stroke: none;
     /* fill: pink; */
-    overflow: scroll;
+    overflow: hidden;
 }
 
 
