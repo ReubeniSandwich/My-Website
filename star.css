@@ -109,12 +109,19 @@ body {
     display: block;
     height: 40vh;
     width: 40ch;
-    background: #D7D9CE;;
+    background: #D7D9CE;
 }
 
 
 /* =================================== */
 
+/* works but needs to be activate somehow */
+
+.star-rotation {
+    transform:rotate(360deg);
+    transition-duration:250s;
+    animation-timing-function: linear;
+}
 
 .arrows {
 	width: 80px;

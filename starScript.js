@@ -1,5 +1,6 @@
 const trees = document.querySelector('.svg-tree-shape');
-const navigation = document.querySelector('.header-blackbox.navbar') 
+const navigation = document.querySelector('.header-blackbox.navbar')
+const starMap = document.querySelector("#svgCanvas > g");
 let topOfNav = navigation.offsetTop;
 let width = document.documentElement.clientWidth;
 let height = document.documentElement.clientHeight;
@@ -27,9 +28,16 @@ function updateNavigation () {
 
 trees.setAttribute("style", `width:${width}px`);
 
+function starRotation () {
+    starMap.classList.add("star-rotation");
+}
+
 // not working atm
 // document.addEventListener('resize', updateTreeSize);
 window.addEventListener('scroll', updateNavigation);
+window.addEventListener('load', starRotation);
+
+// starMap.setAttribute("transform", "rotate(20,10,10)");
 
 
 
