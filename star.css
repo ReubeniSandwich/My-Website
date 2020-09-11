@@ -4,15 +4,15 @@
 
 body {
     /* background-color: #0e0a14; */
+
     margin: 0px;
     padding: 0px;
-    /* border: 0px; */    
     color: #D7D9CE;
     overflow-x: hidden;
 }
 
-/* || Header / SplashScreen || */
 
+/* || Header / SplashScreen || */
 
 .header-container {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -79,8 +79,6 @@ body {
     
     min-height: 15vh;
     bottom: 24.9%;
-    /* width: 100%; */
-    /* max-width: 100%; */
     fill: #0e0a14;
     stroke: none;
     /* fill: pink; */
@@ -98,7 +96,9 @@ body {
 
     width: 100%;
     /* background-color: #0e0a14; */
-    background-color: white;
+    background: rgb(29,29,67);
+    background: linear-gradient(180deg, #0e0a14 0%, rgba(63,55,111,1) 100%);
+
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -108,8 +108,8 @@ body {
     margin-top: 1em;
     display: block;
     height: 40vh;
-    /* width: 2 fr; */
-    background-color: mediumslateblue;
+    width: 40ch;
+    background: #D7D9CE;;
 }
 
 
