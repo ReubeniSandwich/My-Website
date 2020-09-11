@@ -33,7 +33,7 @@ body {
     /* background: rgb(29,29,67);
     background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%); */
 
-    background: linear-gradient(180deg, #1d1d43, #3f376f,#3f376f, #68363d);
+    background: linear-gradient(180deg, #3f376f, #3f376f,#3f376f, #3f376f, #68363d);
     background-size: 200% 200%;
 
     -webkit-animation: AnimationName 20s ease infinite;
