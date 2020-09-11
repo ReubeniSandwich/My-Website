@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    
 }
 
 body {
@@ -53,7 +52,7 @@ body {
     position: sticky;
     display: flex;
     justify-content: space-evenly;
-    height: 20%;
+    /* height: 20%; */
 }
 
 .sticky-navigation {
