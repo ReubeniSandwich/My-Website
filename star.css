@@ -3,8 +3,6 @@
 }
 
 body {
-    /* background-color: #0e0a14; */
-
     margin: 0px;
     padding: 0px;
     color: #D7D9CE;
@@ -12,16 +10,16 @@ body {
 }
 
 
-/* || Header / SplashScreen || */
+
+/* |||||||| Header / SplashScreen |||||||| */
 
 .header-container {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
+    
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;       
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     flex-direction: column;
 }
 
@@ -36,40 +34,29 @@ body {
     background: linear-gradient(180deg, #3f376f, #3f376f,#3f376f, #3f376f, #68363d);
     background-size: 200% 200%;
 
-    -webkit-animation: AnimationName 20s ease infinite;
-    -moz-animation: AnimationName 20s ease infinite;
-    -o-animation: AnimationName 20s ease infinite;
-    animation: AnimationName 20s ease infinite;
+    -webkit-animation: backgroundGradient 20s ease infinite;
+    -moz-animation: backgroundGradient 20s ease infinite;
+    -o-animation: backgroundGradient 20s ease infinite;
+    animation: backgroundGradient 20s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+.svg-tree-shape {
+    position: absolute;
+    overflow: hidden;
+    
+    min-height: 15vh;
+    bottom: 24.9%;
+    fill: #0e0a14;
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-
-
 
 .header-blackbox  {
     width: 100%;
-    
     background-color: #0e0a14;
-    transition: all .5s;
+}
+
+.header-blackbox.splashname {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .header-blackbox.navbar {
@@ -77,76 +64,38 @@ body {
     align-items: center;  
     justify-content: space-evenly;
     flex: 1;
-}  
-
-.header-blackbox.splashname {
-    position: sticky;
-    display: flex;
-    justify-content: space-evenly;
-    /* height: 20%; */
-}
-
-.sticky-navigation {
-    position: fixed;
-    top: 0;
-    color: orangered;
-}
-
-/* .svg-tree-container {
-    display: flex; 
-    overflow: hidden; 
-    justify-content: space-evenly;
-    position: absolute;
-    max-height: 18vh;
-    bottom: 39.9%;
-    
-    height: 18vh;
-     width: 100%;
-    overflow: hidden;
-} */
-
-.svg-tree-shape {
-    position: absolute;
-    
-    min-height: 15vh;
-    bottom: 24.9%;
-    fill: #0e0a14;
-    stroke: none;
-    /* fill: pink; */
-    overflow: hidden;
 }
 
 
-/* || Main Page Content || */
 
+/* |||||||||| Main Page Content |||||||||| */
 
 .main-container {
 
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
+
     /* background-color: #0e0a14; */
     background: rgb(29,29,67);
     background: linear-gradient(180deg, #0e0a14 0%, rgba(63,55,111,1) 100%);
 
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
 }
 
-.egg {
+.card {
     margin-top: 1em;
     display: block;
-    height: 40vh;
+    height: 120vh;
     width: 40ch;
     background: #D7D9CE;
 }
 
 
-/* =================================== */
 
-/* works but needs to be activate somehow */
+/* |||||||| Animations |||||||| */
 
 .star-rotation {
     transform:rotate(360deg);
@@ -154,58 +103,23 @@ body {
     animation-timing-function: linear;
 }
 
-.arrows {
-	width: 80px;
-	height: 80px;
-	position: absolute;
-	left: 50%;
-	margin-left: -20px;
-	bottom: 20px;
+@-webkit-keyframes backgroundGradient {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
 }
-
-/* doesnt work yet */
-
-.big-dipper {
-    animation: star-rotation 1s infinite;
-    -webkit-animation: star-rotation 1s infinite;
-}   
-
-.arrows path {
-	stroke: #ffffff;
-	fill: transparent;
-	stroke-width: 3px;	
-	animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite; 
+@-moz-keyframes backgroundGradient {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
 }
-
-@keyframes arrow
-{
-0% {opacity:0; transform:translateY(10px)}
-80% {opacity:1; transform:translateY(50px)}
-100% {opacity:0; transform:translateY(50px)}
+@-o-keyframes backgroundGradient {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
 }
-
-@-webkit-keyframes arrow /*Safari and Chrome*/
-{
-0% {opacity:0; transform:translateY(10px)}
-80% {opacity:1; transform:translateY(50px)}
-100% {opacity:0; transform:translateY(50px)}
-}
-
-.arrows path.a1 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari and Chrome */
-}
-
-/* doesn't work yet */
-
-@keyframes star-rotation 
-{
-    0% {transform: rotate(20,10,10)}
-    100% {transform: rotate(50,50,50)}
-}
-@-webkit-keyframes star-rotation 
-{
-    0% {transform: rotate(20,10,10)}
-    100% {transform: rotate(50,50,50)}
+@keyframes backgroundGradient {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
 }
