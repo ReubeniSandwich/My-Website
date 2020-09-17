@@ -1,5 +1,5 @@
 const trees = document.querySelector('.svg-tree-shape');
-const starMap = document.querySelector("#svgCanvas > g");
+const starMap = document.querySelector(".svg-star-map");
 let width = document.documentElement.clientWidth;
 let height = document.documentElement.clientHeight;
 
