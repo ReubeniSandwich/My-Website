@@ -15,7 +15,7 @@ function starRotation () {
     starMap.classList.add("star-rotation");
     console.log("Howdy");
 }
-window.addEventListener('load', starRotation);
+// window.addEventListener('load', starRotation);
 
 
 
