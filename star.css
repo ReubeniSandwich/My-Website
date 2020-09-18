@@ -44,7 +44,7 @@ body {
     position: relative;
     /* margin: 0; */
     /* padding: 0; */
-    height: 125%;
+    height: 110%;
     width: 100%;
     top: -8vh;
     left: -5vw;
@@ -114,7 +114,7 @@ body {
 }
 
 .spotify-widget {
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
 
