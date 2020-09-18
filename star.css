@@ -44,10 +44,9 @@ body {
     position: relative;
     /* margin: 0; */
     /* padding: 0; */
-    height: 110%;
+    height: 120%;
     width: 100%;
     top: -8vh;
-    left: -5vw;
     z-index: 1;
 }
 
@@ -68,12 +67,12 @@ body {
 
 }
 
-.header-blackbox.splashname {
+.header-blackbox.splashname  {
     display: flex;
     justify-content: space-evenly;
     z-index: 1000;
-
 }
+
 
 .header-blackbox.navbar {
     display: flex;
@@ -81,6 +80,16 @@ body {
     justify-content: space-evenly;
     flex: 1;
     z-index: 1000;
+}
+
+.header-blackbox.navbar > a {
+    text-decoration: none;
+    color: #D7D9CE;
+}
+
+.header-blackbox.navbar > a:hover {
+    color: white;
+    transition-duration: .3s;
 }
 
 
@@ -119,15 +128,26 @@ body {
 }
 
 
+/* |||||||| MEDIA QUERIES |||||||| */
+
+
+/* \/\/ DESKTOP \/\/ */
+@media screen and (min-width: 650px) {
+
+.svg-star-map {
+    left: -5vw;
+    height: 110%;
+}
+
+}
+
 
 /* |||||||| Animations |||||||| */
 
 .star-rotation {
 
-    animation: starMapRotation 1080s linear infinite; /* put infinite instead of 1 later */
+    animation: starMapRotation 1080s linear infinite;
     transform-origin: 50% 50%;
-    z-index: 0;
-
 }
 
 @-webkit-keyframes backgroundGradient {
@@ -151,6 +171,7 @@ body {
     100%{background-position:50% 0%}
 }
 
+/* need to add webkit, moz, -o- support */
 @keyframes starMapRotation {
     from {transform: rotate(0deg); }
     to {transform: rotate(360deg); }

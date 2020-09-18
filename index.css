@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
@@ -79,7 +80,7 @@ font-family: 'Montserrat', sans-serif;
 }
 /* || Moon.html CSS || */
 
-.moon-object{
+.moon-object {
 
     /* display: table;     */
     /* margin:20px auto; */
