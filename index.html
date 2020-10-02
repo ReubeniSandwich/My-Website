@@ -106,7 +106,14 @@
 
         <!-- Sky Box with Constellations -->
          <span class="header-skybox">
-            <img src="CleanedUpStarMap.svg" class="svg-star-map">
+
+
+            <!-- FIX NONE ON PRESERVE ASPECT RATIO -->
+            <svg class="svgCanvas" viewBox="0 0 2000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <g class="starGroup">
+                </g>
+            </svg>
+            <!-- <img src="CleanedUpStarMap.svg" class="svg-star-map"> -->
 
             <!-- <svg id="svgCanvas" viewbox="0 0 500 500" preserveAspectRatio="xMinYMin slice" width="250px" height="250px"> -->
                 <!-- rotation (rotation amount, where you want it to rotate from, where you want it to rotate from) ... only use first parameter if you want it to rotate at it's center -->

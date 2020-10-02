@@ -40,6 +40,52 @@ body {
     animation: backgroundGradient 20s ease infinite; */
 }
 
+
+.star {
+    fill: white;
+    animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
+    glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
+    animation-delay: var(--star-animation-delay, 0);
+  }
+  
+
+  .svgCanvas {
+    /* background-color: hsla(120, 100%, 25%, 0.199); */
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  
+  @keyframes pulse {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    70% {
+      transform: scale3d(0.2, 0.2, 0.2);
+    }
+  
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes glowing {
+    0% {
+      opacity: var(--star-brightness, 1);
+    }
+  
+    100% {
+      opacity: calc(var(--star-brightness, 1) * 0.5);
+    }
+  }
+
+
 .svg-star-map {
     position: relative;
     /* margin: 0; */
