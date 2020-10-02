@@ -1,7 +1,8 @@
 # Reuben's Website
 
-TODO
+To Due
 
-1. Add Cat Page
-2. Add Music Page
-3. Figure out how adding new pages works [DONE]
+1. Convert to Gatsby for better website performance
+2. Consider changing constellations to randomized ones
+3. Increase functionality
+
