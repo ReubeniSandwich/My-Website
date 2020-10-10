@@ -23,6 +23,7 @@ body {
     flex-direction: column;
 }
 
+
 .header-skybox {
     width: 100%;
     height: 75%;
@@ -49,43 +50,6 @@ body {
   }
   
 
-  .svgCanvas {
-    /* background-color: hsla(120, 100%, 25%, 0.199); */
-    width: 100%;
-    height: 100%;
-  }
-  
-
-  
-  @keyframes pulse {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    30% {
-      transform: scale3d(1.2, 1.2, 1.2);
-    }
-  
-    70% {
-      transform: scale3d(0.2, 0.2, 0.2);
-    }
-  
-    100% {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-  
-  @keyframes glowing {
-    0% {
-      opacity: var(--star-brightness, 1);
-    }
-  
-    100% {
-      opacity: calc(var(--star-brightness, 1) * 0.5);
-    }
-  }
-
-
 .svg-star-map {
     position: relative;
     /* margin: 0; */
@@ -96,6 +60,14 @@ body {
     z-index: 1;
 }
 
+
+  .svgCanvas {
+    /* background-color: hsla(120, 100%, 25%, 0.199); */
+    width: 100%;
+    height: 100%;
+  }
+
+
 .svg-tree-shape {
     position: absolute;
     overflow: hidden;
@@ -105,6 +77,7 @@ body {
     fill: #0e0a14;
     z-index: 1000;
 }
+
 
 .header-blackbox  {
     width: 100%;
@@ -118,7 +91,6 @@ body {
     justify-content: space-evenly;
     z-index: 1000;
 }
-
 
 .header-blackbox.navbar {
     display: flex;
@@ -155,7 +127,6 @@ body {
     /* background-color: #0e0a14; */
     background: rgb(29,29,67);
     background: linear-gradient(180deg, #0e0a14 0%, rgba(63,55,111,1) 100%);
-
 }
 
 .card {
@@ -180,17 +151,46 @@ body {
 /* \/\/ DESKTOP \/\/ */
 @media screen and (min-width: 650px) {
 
-.svg-star-map {
-    left: -5vw;
-    height: 110%;
+    .svg-star-map {
+        left: -5vw;
+        height: 110%;
+    }
 }
 
-}
+
+/* |||||||| ANIMATIONS |||||||| */
 
 
-/* |||||||| Animations |||||||| */
+@keyframes pulse {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    70% {
+      transform: scale3d(0.2, 0.2, 0.2);
+    }
+  
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes glowing {
+    0% {
+      opacity: var(--star-brightness, 1);
+    }
+  
+    100% {
+      opacity: calc(var(--star-brightness, 1) * 0.5);
+    }
+  }
 
-.star-rotation {
+  /* Not Used Currently */
+/* .star-rotation {
 
     animation: starMapRotation 1080s linear infinite;
     transform-origin: 50% 50%;
@@ -217,8 +217,8 @@ body {
     100%{background-position:50% 0%}
 }
 
-/* need to add webkit, moz, -o- support */
+/* need to add webkit, moz, -o- support
 @keyframes starMapRotation {
     from {transform: rotate(0deg); }
     to {transform: rotate(360deg); }
-}
+} */
