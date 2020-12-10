@@ -5,7 +5,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    color: #D7D9CE;
+    /* color: #D7D9CE; */
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -15,36 +15,14 @@ body {
 /* |||||||| Header / SplashScreen |||||||| */
 
 .header-container {
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: 100vh; Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 80);
     
     /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;       
-    display: flex;
-    flex-direction: column;
+    /* min-height: -webkit-fill-available;        */
+    /* display: block; */
+    /* background: hsla(66, 36%, 63%, 0.479); */
 }
-
-
-.header-skybox {
-    width: 100%;
-    height: 75%;
-
-    display: flex;
-
-    /* background: rgb(29,29,67);
-    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%); */
-
-    background: #3f376f;
-    background: linear-gradient(180deg,#2b254b, #3f376f, #59376f);
-    /* background: linear-gradient(180deg,#3f376f, #3f376f, #68363d); */
-    /* background-size: 200% 200%;
-
-    -webkit-animation: backgroundGradient 20s ease infinite;
-    -moz-animation: backgroundGradient 20s ease infinite;
-    -o-animation: backgroundGradient 20s ease infinite;
-    animation: backgroundGradient 20s ease infinite; */
-}
-
 
 .star {
     fill: white;
@@ -53,22 +31,16 @@ body {
     animation-delay: var(--star-animation-delay, 0);
   }
   
-
-.svg-star-map {
-    position: relative;
-    /* margin: 0; */
-    /* padding: 0; */
-    height: 120%;
-    width: 100%;
-    top: -8vh;
-    z-index: 1;
-}
-
-
-  .svgCanvas {
+  .svgStarCanvas {
     /* background-color: hsla(120, 100%, 25%, 0.199); */
-    width: 100%;
+    /* width: 100%;
+    height: 100%;  */
     height: 100%;
+    width: 100%;
+    background: #3f376f;
+    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
+    z-index: 100;
+    /* overflow: hidden; */
   }
 
   .splash-name {
@@ -92,13 +64,14 @@ body {
 
 
 .svg-tree-shape {
+  /* visibility: hidden; */
     position: absolute;
     overflow: hidden;
     
     min-height: 15vh;
-    bottom: 24.9%;
+    bottom: 19.8%;
     fill: #0e0a14;
-    z-index: 1000;
+    z-index: 500;
 }
 
 
@@ -112,7 +85,7 @@ body {
 .header-blackbox.splashname  {
     display: flex;
     justify-content: space-evenly;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .header-blackbox.navbar {
