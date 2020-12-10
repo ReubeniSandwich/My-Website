@@ -5,7 +5,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    /* color: #D7D9CE; */
+    color: #D7D9CE;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -15,85 +15,61 @@ body {
 /* |||||||| Header / SplashScreen |||||||| */
 
 .header-container {
-    /* height: 100vh; Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 80);
+  /* Fallback for browsers that do not support Custom Properties */
+    height: 100vh; 
+
+    /* standard calculated height. Offers more consistency between mobile and web */
+    height: calc(var(--vh, 1vh) * 100);
     
     /* mobile viewport bug fix */
-    /* min-height: -webkit-fill-available;        */
-    /* display: block; */
-    /* background: hsla(66, 36%, 63%, 0.479); */
+    min-height: -webkit-fill-available;       
 }
+  
+  .svgStarCanvas {
+    display: block;
+    background: #3f376f;
+    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
+    height: 80%;
+    width: 100%;
+  }
 
-.star {
+  .star {
     fill: white;
     animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
     glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
     animation-delay: var(--star-animation-delay, 0);
   }
-  
-  .svgStarCanvas {
-    /* background-color: hsla(120, 100%, 25%, 0.199); */
-    /* width: 100%;
-    height: 100%;  */
-    height: 100%;
-    width: 100%;
-    background: #3f376f;
-    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
-    z-index: 100;
-    /* overflow: hidden; */
-  }
 
-  .splash-name {
-    font-family: 'Knewave', cursive;
-    font-weight: 400;
+  .header-splashname {
     position: absolute;
-    line-height: 1em;
     text-align: center;
-    font-size: 3em;
-    top: 12vh;
-    left: 30%;
-    transform: rotate(-1deg);
+    width: 100%;
+    bottom: 60%;
+    
+    font-family: 'Knewave', cursive;
+    font-size: 3.5em;
+    font-weight: 400;
+    line-height: 1em;
     text-shadow: 2px 6px 10px hsla(0, 0%, 0%, 0.150 );
-
-    /* font-family: 'Alfa Slab One', cursive; */
-/* font-family: 'Knewave', cursive; */
-
-/* font-family: 'Lemon', cursive; */
-/* font-family: 'Shrikhand', cursive; */
+    transform: rotate(-1.5deg);
   }
-
 
 .svg-tree-shape {
-  /* visibility: hidden; */
     position: absolute;
     overflow: hidden;
-    
     min-height: 15vh;
     bottom: 19.8%;
+    
     fill: #0e0a14;
-    z-index: 500;
-}
-
-
-.header-blackbox  {
-    width: 100%;
-    background-color: #0e0a14;
     z-index: 1000;
-
-}
-
-.header-blackbox.splashname  {
-    display: flex;
-    justify-content: space-evenly;
-    z-index: 1001;
 }
 
 .header-blackbox.navbar {
+    height: 20%;
     display: flex;
     align-items: center;  
     justify-content: space-evenly;
-    flex: 1;
-    z-index: 1000;
+    background-color: #0e0a14;
 }
 
 .header-blackbox.navbar > a {
@@ -114,59 +90,33 @@ body {
 /* |||||||||| Main Page Content |||||||||| */
 
 .main-container {
-
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     width: 100%;
-    z-index: 100000;
-
-    /* background-color: #0e0a14; */
     background: rgb(29,29,67);
     background: linear-gradient(180deg, #0e0a14 0%, rgba(63,55,111,1) 100%);
 }
 
 .card {
-    z-index: 1000;
-    margin-top: 1em;
     display: block;
+    margin-top: 1em;
     height: 40vh;
-    width: 70vw;
+    width: 80%;
     background: rgba(14, 10, 20, 0.5);
-    /* background: hsla(0, 0%, 0%, 0.5); */
 }
-
-.spotify-widget {
-    width: 100%;
-    height: 100%;
-}
-
 
 /* |||||||| MEDIA QUERIES |||||||| */
 
-
 /* \/\/ DESKTOP \/\/ */
-@media screen and (min-width: 650px) {
+/* @media screen and (min-width: 650px) {
 
-    .svg-star-map {
-        left: -5vw;
-        height: 110%;
-    }
-
-    .splash-name {
-      font-size: 7em;
-      top: 6vh;
-      left: 39%;
-      
-    }
-
-}
+} */
 
 
 /* |||||||| ANIMATIONS |||||||| */
-
 
 @keyframes pulse {
     0% {
@@ -196,36 +146,3 @@ body {
     }
   }
 
-  /* Not Used Currently */
-/* .star-rotation {
-
-    animation: starMapRotation 1080s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-@-webkit-keyframes backgroundGradient {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@-moz-keyframes backgroundGradient {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@-o-keyframes backgroundGradient {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@keyframes backgroundGradient {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-
-/* need to add webkit, moz, -o- support
-@keyframes starMapRotation {
-    from {transform: rotate(0deg); }
-    to {transform: rotate(360deg); }
-} */
