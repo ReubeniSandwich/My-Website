@@ -25,7 +25,6 @@ html, body {
 
     /* standard calculated height. Offers more consistency between mobile and web */
     height: calc(var(--vh, 1vh) * 100);
-    overflow-x: hidden;
     
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;       
@@ -33,26 +32,25 @@ html, body {
   
   .svgStarCanvas {
     display: block;
-    overflow-x: hidden;
-    background: #3f376f;
-    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
     height: 80%;
     width: 100%;
+    background: #3f376f;
+    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
+
   }
 
   .star {
-    fill: white;
     animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
     glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
     animation-delay: var(--star-animation-delay, 0);
+    fill: white;
   }
 
   .header-splashname {
     overflow-y: hidden;
     position: absolute;
     text-align: center;
-    /* annoying issue where the transform makes the horizontal bulge out a few pixels and make a horizontal scroll... hence the 99% */
-    width: 99%;
+    width: 99%;     /* Issue 99%: transform makes screen bulge out several pixels horizontally/vertically. Creates vertical and horizon scrollbars. */
     bottom: 60%;
     
     font-family: 'Knewave', cursive;
@@ -61,6 +59,8 @@ html, body {
     line-height: 1em;
     text-shadow: 2px 6px 10px hsla(0, 0%, 0%, 0.150 );
     transform: rotate(-1.5deg);
+
+    cursor: default;
   }
 
 .svg-tree-shape {
@@ -85,8 +85,6 @@ html, body {
     text-decoration: none;
     color: #D7D9CE;
     font-family: 'Roboto', sans-serif;
-
-
 }
 
 .header-blackbox.navbar > a:hover {
@@ -158,4 +156,3 @@ html, body {
       opacity: calc(var(--star-brightness, 1) * 0.5);
     }
   }
-
