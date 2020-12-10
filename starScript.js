@@ -8,57 +8,41 @@ let vh = document.documentElement.clientHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-
 trees.setAttribute("style", `width:${width}px`);
 
-function starRotation () {
-    starMap.classList.add("star-rotation");
-    console.log("Howdy");
-}
 
 const STAR_DATA = generateStarData();
-const starSize = 25;
-const starGroup = document.querySelector(".starGroup");
-// const newStar = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-// newStar.classList.add("star");
-// newStar.setAttribute("r", "25")
-// newStar.setAttribute("transform", "translate(100,200)")
-// starGroup.appendChild(newStar);
-
+const starGroup = document.querySelector(".starGroup-svg");
 
 // TODO understand this better. Also put the credit for this star map, you di not do this yourself.
-STAR_DATA.forEach(starCords => {
+STAR_DATA.forEach(starCordinates => {
+  const starContainer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  const star = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   
-  const radius = 1.3;
-  const delay = 100 + 500 * Math.random();
+  const radius = 1.2 + Math.random();
+  const delay = 100 +  Math.random() * 500;
   const duration = 3000 + Math.random() * 4000;
   const brightness = 0.7 + Math.random() * 0.3;
-
-  console.log("hello");
-  const newStar = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  const newStarContainer = document.createElementNS("http://www.w3.org/2000/svg", "g");
-  newStar.classList.add("star");
-  newStar.setAttribute("r", radius)
-  newStarContainer.setAttribute("transform", `translate(${starCords.x}, ${starCords.y})`);
- 
-
-
-  newStar.style.setProperty('--star-animation-delay', `${delay}ms`);
-  newStar.style.setProperty('--star-animation-duration', `${duration}ms`);
-  newStar.style.setProperty('--star-animation-glow-duration', `10000ms`);
-  newStar.style.setProperty('--star-brightness', `${brightness}`);
   
-  newStarContainer.appendChild(newStar);
-  starGroup.appendChild(newStarContainer);
+  starContainer.setAttribute("transform", `translate(${starCordinates.x}, ${starCordinates.y})`);
+  star.classList.add("star");
+  star.setAttribute("r", radius)
+ 
+  star.style.setProperty('--star-animation-delay', `${delay}ms`);
+  star.style.setProperty('--star-animation-duration', `${duration}ms`);
+  star.style.setProperty('--star-animation-glow-duration', `10000ms`);
+  star.style.setProperty('--star-brightness', `${brightness}`);
+  
+  starContainer.appendChild(star);
+  starGroup.appendChild(starContainer);
 });
-
-
 
 
 // this is here to make the actual code more accessible- will be avaialble at the top through hoisting
 // TODO have it generate randomly.. or atleast more random than this.
 function generateStarData() {
-  return [ {
+  return [ 
+  {
     "x": 1596.973448245577,
     "y": 578.4171532781027
   },
@@ -69,10 +53,6 @@ function generateStarData() {
   {
     "x": 195.53121286639285,
     "y": 830.2913557403084
-  },
-  {
-    "x": 50,
-    "y": 25
   },
   {
     "x": 1270.262628273585,
@@ -379,33 +359,3 @@ function generateStarData() {
     "y": 879.0979664055392
   }]
 };
-
-// window.addEventListener('load', starRotation);
-
-
-
-// ||||||||| Archived Code ||||||||
-
-// const navigation = document.querySelector('.header-blackbox.navbar')
-// let topOfNav = navigation.offsetTop;
-
-// document.addEventListener('resize', updateTreeSize);
-// window.addEventListener('scroll', updateNavigation);
-
-//Not working at all
-// function updateTreeSize () {
-//     width = document.documentElement.clientWidth;
-//     trees.setAttribute("style", `width:${width}px`);
-// }
-
-// function updateNavigation () {
-//     if (window.scrollY >= topOfNav) {
-//         // document.body.style.paddingTop = navigation.offsetHeight + 'px';
-//         navigation.classList.add("sticky-navigation");
-//     } else {
-//         navigation.classList.remove("sticky-navigation");
-//         document.body.style.paddingTop = 0;
-//     }
-// }
-
-
