@@ -7,6 +7,7 @@ body {
     padding: 0px;
     color: #D7D9CE;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -28,11 +29,14 @@ body {
     width: 100%;
     height: 75%;
 
+    display: flex;
+
     /* background: rgb(29,29,67);
     background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%); */
 
     background: #3f376f;
-    /* background: linear-gradient(180deg, #3f376f, #3f376f,#3f376f, #3f376f, #68363d); */
+    background: linear-gradient(180deg,#2b254b, #3f376f, #59376f);
+    /* background: linear-gradient(180deg,#3f376f, #3f376f, #68363d); */
     /* background-size: 200% 200%;
 
     -webkit-animation: backgroundGradient 20s ease infinite;
@@ -65,6 +69,25 @@ body {
     /* background-color: hsla(120, 100%, 25%, 0.199); */
     width: 100%;
     height: 100%;
+  }
+
+  .splash-name {
+    font-family: 'Knewave', cursive;
+    font-weight: 400;
+    position: absolute;
+    line-height: 1em;
+    text-align: center;
+    font-size: 2.5em;
+    top: 10vh;
+    left: 28%;
+    transform: rotate(-1deg);
+    text-shadow: 2px 6px 10px hsla(0, 0%, 0%, 0.150 );
+
+    /* font-family: 'Alfa Slab One', cursive; */
+/* font-family: 'Knewave', cursive; */
+
+/* font-family: 'Lemon', cursive; */
+/* font-family: 'Shrikhand', cursive; */
   }
 
 
@@ -103,6 +126,9 @@ body {
 .header-blackbox.navbar > a {
     text-decoration: none;
     color: #D7D9CE;
+    font-family: 'Roboto', sans-serif;
+
+
 }
 
 .header-blackbox.navbar > a:hover {
@@ -155,6 +181,14 @@ body {
         left: -5vw;
         height: 110%;
     }
+
+    .splash-name {
+      font-size: 7em;
+      top: 6vh;
+      left: 39%;
+      
+    }
+
 }
 
 
