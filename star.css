@@ -1,8 +1,13 @@
 * {
     box-sizing: border-box;
+
+    /* useful debugging */
+    /* background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important; */
 }
 
-body {
+html, body {
     margin: 0px;
     padding: 0px;
     color: #D7D9CE;
@@ -20,6 +25,7 @@ body {
 
     /* standard calculated height. Offers more consistency between mobile and web */
     height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
     
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;       
@@ -27,6 +33,7 @@ body {
   
   .svgStarCanvas {
     display: block;
+    overflow-x: hidden;
     background: #3f376f;
     background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
     height: 80%;
@@ -41,9 +48,11 @@ body {
   }
 
   .header-splashname {
+    overflow-y: hidden;
     position: absolute;
     text-align: center;
-    width: 100%;
+    /* annoying issue where the transform makes the horizontal bulge out a few pixels and make a horizontal scroll... hence the 99% */
+    width: 99%;
     bottom: 60%;
     
     font-family: 'Knewave', cursive;
@@ -111,9 +120,13 @@ body {
 /* |||||||| MEDIA QUERIES |||||||| */
 
 /* \/\/ DESKTOP \/\/ */
-/* @media screen and (min-width: 650px) {
+@media screen and (min-width: 1000px) {
 
-} */
+  .header-splashname {
+    font-size: 6.5em;
+  }
+
+}
 
 
 /* |||||||| ANIMATIONS |||||||| */
