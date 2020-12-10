@@ -93,6 +93,10 @@ html, body {
     transition-duration: .3s;
 }
 
+.header-blackbox.navbar:focus {
+  outline:none;
+}
+
 
 
 /* |||||||||| Main Page Content |||||||||| */
