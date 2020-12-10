@@ -77,9 +77,9 @@ body {
     position: absolute;
     line-height: 1em;
     text-align: center;
-    font-size: 2.5em;
-    top: 10vh;
-    left: 28%;
+    font-size: 3em;
+    top: 12vh;
+    left: 39%;
     transform: rotate(-1deg);
     text-shadow: 2px 6px 10px hsla(0, 0%, 0%, 0.150 );
 
