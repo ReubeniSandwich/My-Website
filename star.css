@@ -39,6 +39,7 @@ html, body {
 
   }
 
+  /* TODO attribute the people who did the grunt work for this */
   .star {
     animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
     glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;

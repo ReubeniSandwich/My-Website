@@ -25,6 +25,8 @@ const starGroup = document.querySelector(".starGroup");
 // newStar.setAttribute("transform", "translate(100,200)")
 // starGroup.appendChild(newStar);
 
+
+// TODO understand this better. Also put the credit for this star map, you di not do this yourself.
 STAR_DATA.forEach(starCords => {
   
   const radius = 1.3;
@@ -54,6 +56,7 @@ STAR_DATA.forEach(starCords => {
 
 
 // this is here to make the actual code more accessible- will be avaialble at the top through hoisting
+// TODO have it generate randomly.. or atleast more random than this.
 function generateStarData() {
   return [ {
     "x": 1596.973448245577,
