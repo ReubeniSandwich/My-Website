@@ -6,8 +6,34 @@ body {
 margin: 0px;
 padding: 0px;
 border: 0px;
-
+background-color: bisque;
 font-family: 'Montserrat', sans-serif;
 }
 
+.flex-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
+.grid-object-container {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    max-width: 800px;
+    background-color: white;
+    margin: 1em;
+}
+
+.grid-element {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: aquamarine;
+    /* height: 10vh; */
+    /* width: 10vw; */
+    margin: 1em;
+}
+
+.grid-element.header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+}
