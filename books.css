@@ -12,28 +12,43 @@ font-family: 'Montserrat', sans-serif;
 
 .flex-wrapper {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    /* justify-content: center; */
 }
 
 .grid-object-container {
     display: grid;
     grid-template-columns: 4fr 8fr;
+    /* grid-template-columns: repeat(5, 1fr);   */
     max-width: 800px;
     background-color: white;
     margin: 1em;
 }
 
 .grid-element {
-    display: flex;
+    /* display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: center; */
     background-color: aquamarine;
     /* height: 10vh; */
     /* width: 10vw; */
-    margin: 1em;
+    margin: 1vw;
 }
 
-.grid-element.header {
-        grid-column-start: 1;
-        grid-column-end: 3;
+.grid-element.textbox {
+ padding: 1em;
+
+}
+
+.grid-element.button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+    border-radius: .5vw;
 }
