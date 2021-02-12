@@ -127,22 +127,24 @@ html, body {
   position: relative;
   border-radius: 10px;
   margin-top: 1em;
-  height: 40vh;
+  min-height: 30vh;
   width: 80%;
-  border-top: .2rem solid rgba(63, 55, 111, 0.800);
-  border-left: .2rem solid rgba(63, 55, 111, 0.800);
+  border-top: .25rem solid rgba(63, 55, 111, 0.500);
+  /* border-left: .2rem solid rgba(63, 55, 111, 0.800); */
   /* border-color: aliceblue; */
   background: rgba(14, 10, 20, 0.5);
   /* background-color: #68363d; */
-  padding-left: 10rem;
+  padding-left: 7rem;
 }
 
 .personal-card-header {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   padding: 0;
+  margin: 1.5rem 0rem .5rem 0rem;
   display: block;
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
+  /* border-bottom: .2rem solid #3f376f; */
 }
 
 .personal-card-img {
@@ -150,8 +152,8 @@ html, body {
   top: -2rem;
   left: -2rem;
   border-radius: 50%;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
   background-color: aquamarine;
   background-image: url('myself.jpg');
   background-size: cover;
