@@ -144,7 +144,7 @@ html, body {
   border-radius: 10px;
   margin-top: 1em;
   min-height: 30vh;
-  width: 80%;
+  width: 88%;
   border-top: .25rem solid rgba(63, 55, 111, 0.500);
   /* border-left: .2rem solid rgba(63, 55, 111, 0.800); */
   /* border-color: aliceblue; */
@@ -166,15 +166,19 @@ html, body {
 .personal-card-img {
   position: absolute;
   top: -2rem;
-  left: -2rem;
+  left: -1.2rem;
   border-radius: 50%;
-  height: 8rem;
-  width: 8rem;
+  height: 7rem;
+  width: 7rem;
   background-color: aquamarine;
   background-image: url('myself.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: 5px 6px 15px  rgba(0, 0, 0, 0.5);
+}
+
+.personal-card-paragraph {
+  padding-right: 1rem;
 }
 
 .card {
