@@ -17,12 +17,10 @@
 
 <body>
     <header class="header-container">
-<!-- TODO figure out why my svg aren't working as links and why am I getting samesite cookie problems-->
-
-        <!-- <object type="image/svg+xml" data="github.svg" class="social github">Your browser does not support SVGs</object> -->
-        <!-- <object type="image/svg+xml" data="linkedin.svg" class="social linkedin">Your browser does not support SVGs</object> -->
-
-        <span class="header-splashname">Reuben<br>Sanchez</span>
+        <object type="image/svg+xml" data="linkedin.svg" class="social linkedin fade-in">Your browser does not support SVGs</object>
+        <object type="image/svg+xml" data="github.svg" class="social github fade-in">Your browser does not support SVGs</object>
+        
+        <span class="header-splashname fade-in-header">Reuben<br>Sanchez</span>
 
         <!-- Tree Shapes -->
         <!-- Created by potrace 1.15, written by Peter Selinger 2001-2017 -->
@@ -103,15 +101,15 @@
 
         <!-- Stars -->
         <svg class="svgStarCanvas" viewBox="0 0 2000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <g class="starGroup-svg">
+                <g class="starGroup-svg fade-in">
                 </g>
         </svg>
 
 
         <nav class="header-blackbox navbar">
-            <a href="moon.html"><h2>Moon</h2></a>
-            <a href="#"><h2>Projects</h2></a>
-            <a href="#"><h2>Music</h2></a>
+            <a href="moon.html" class="fade-in"><h2>Moon</h2></a>
+            <a href="#" class="fade-in"><h2>Projects</h2></a>
+            <a href="#" class="fade-in"><h2>Music</h2></a>
         </nav>
     </header>
 
@@ -120,10 +118,9 @@
             <div class="personal-card-img"></div>
             <p class="personal-card-header">About Myself</p>
             <p class="personal-card-paragraph">I web develop as a hobby! This website is proudly made with vanilla CSS and JavaScript.</p>
-            <!-- <p class="">Words words word</p> -->
         </span>
         <span class="card"></span>
-        <span class="card"></span   >
+        <span class="card"></span>
         <span class="card"></span>
     </main>
 

@@ -14,7 +14,8 @@ trees.setAttribute("style", `width:${width}px`);
 const STAR_DATA = generateStarData();
 const starGroup = document.querySelector(".starGroup-svg");
 
-// TODO understand this better. Also put the credit for this star map, you di not do this yourself.
+// TODO understand this better.
+/* Lots of code and inspiration from https://www.satellytes.com/blog/twinkling-night-sky-with-shooting-stars-made-in-svg */
 STAR_DATA.forEach(starCordinates => {
   const starContainer = document.createElementNS("http://www.w3.org/2000/svg", "g");
   const star = document.createElementNS("http://www.w3.org/2000/svg", "circle");

@@ -1,8 +1,8 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    /* useful debugging */
-    /* background: #000 !important;
+  /* useful debugging */
+  /* background: #000 !important;
     color: #0f0 !important;
     outline: solid #f00 1px !important; */
 }
@@ -11,14 +11,20 @@
   font-size: 16px;
   --header-font: 'Bungee Hairline', cursive;
   --paragraph-font: 'Roboto', sans-serif;
+
+  --background-darkest-color: #0e0a14;
+  --background-middle-color: #3f376f;
+
+  --standard-fade-speed: 1.5s;
 }
 
-html, body {
-    margin: 0px;
-    padding: 0px;
-    color: #D7D9CE;
-    overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  color: #D7D9CE;
+  overflow-x: hidden;
+  font-family: var(--paragraph-font);
 }
 
 
@@ -27,115 +33,120 @@ html, body {
 
 .header-container {
   /* Fallback for browsers that do not support Custom Properties */
-    height: 100vh; 
+  height: 100vh;
 
-    /* standard calculated height. Offers more consistency between mobile and web */
-    height: calc(var(--vh, 1vh) * 100);
-    
-    /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;       
+  /* standard calculated height. Offers more consistency between mobile and web */
+  height: calc(var(--vh, 1vh) * 100);
+
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
 }
-  
-  .svgStarCanvas {
-    display: block;
-    height: 80%;
-    width: 100%;
-    background: #3f376f;
-    background: linear-gradient(180deg, #1d1d43 0%, #3f376f 70%, #68363d 100%);
 
-  }
+.svgStarCanvas {
+  display: block;
+  height: 80%;
+  width: 100%;
+  background: var(--background-middle-color);
+  background: linear-gradient(180deg, #1d1d43 0%, var(--background-middle-color) 70%, #68363d 100%);
 
-  /* TODO attribute the people who did the grunt work for this */
-  .star {
-    animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
+}
+
+/* Lots of code and inspiration from https://www.satellytes.com/blog/twinkling-night-sky-with-shooting-stars-made-in-svg */
+.star {
+  animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
     glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
-    animation-delay: var(--star-animation-delay, 0);
-    fill: white;
-  }
+  animation-delay: var(--star-animation-delay, 0);
+  fill: white;
+}
 
-  .social.github {
-    /* See the SVG file for it's animation options */
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
+.social.github {
+  /* See the SVG file for it's animation options and colors */
+  position: absolute;
+  right: 3.5rem;
+  top: 1rem;
+}
 
-  .social.linkedin {
-    /* See the SVG file for it's animation options */
-    position: absolute;
-    right: 3.5rem;
-    top: 1rem;
-    /* height: 400px; */
-    color: rgba(255, 255, 255, 0.8);
-  }
+.social.linkedin {
+  /* See the SVG file for it's animation options and colors */
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
 
-  .header-splashname {
-    overflow-y: hidden;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: 60%;
-    
-    font-family: var(--header-font);
-    font-size: 3.5em;
-    font-weight: 400;
-    line-height: 1em;
-    text-shadow: 2px 6px 10px hsla(0, 0%, 0%, 0.150 );
+.header-splashname {
+  overflow-y: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 60%;
 
-    /* makes text non-highlightable */
-    cursor: default;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-  }
+  /* background: -webkit-linear-gradient(white 80%, var(--background-middle-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+
+  font-family: var(--header-font);
+  font-weight: 400;
+  font-size: 3.5em;
+  line-height: 1em;
+
+  /* makes text non-highlightable */
+  cursor: default;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
 
 .svg-tree-shape {
-    position: absolute;
-    overflow: hidden;
-    min-height: 15vh;
-    bottom: 19.8%;
-    
-    fill: #0e0a14;
-    z-index: 1000;
+  position: absolute;
+  overflow: hidden;
+  min-height: 15vh;
+  bottom: 19.8%;
+
+  fill: var(--background-darkest-color);
+  z-index: 1000;
 }
 
 .header-blackbox.navbar {
-    height: 20%;
-    display: flex;
-    align-items: center;  
-    justify-content: space-evenly;
-    background-color: #0e0a14;
+  display: flex;
+  height: 20%;
+  justify-content: space-evenly;
+  background-color: var(--background-darkest-color);
+  align-items: center;
 }
 
-.header-blackbox.navbar > a {
-    text-decoration: none;
-    color: #D7D9CE;
-    font-family: 'Roboto', sans-serif;
+.header-blackbox.navbar>a {
+  text-decoration: none;
+  color: #D7D9CE;
+  font-family: var(--paragraph-font);
 }
 
-.header-blackbox.navbar > a:hover {
-    color: white;
-    transition-duration: .3s;
+.header-blackbox.navbar>a:hover {
+  color: white;
+  transition-duration: .15s;
 }
 
 .header-blackbox.navbar:focus {
-  outline:none;
+  outline: none;
 }
 
 /* |||||||||| Main Page Content |||||||||| */
 
 .main-container {
-  /* padding needed so that my profile pic doesnt show when the screen is fully scrolled up */
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    background: rgb(29,29,67);
-    background: linear-gradient(180deg, #0e0a14 0%, rgba(63,55,111,1) 100%);
+  /* padding is needed so that my profile pic doesnt show when the screen is fully scrolled up */
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background: rgb(29, 29, 67);
+  background: linear-gradient(180deg, var(--background-darkest-color) 0%, rgba(63, 55, 111, 1) 100%);
 }
 
 .personal-card {
@@ -155,13 +166,13 @@ html, body {
 }
 
 .personal-card-header {
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 1.5rem 0rem 0rem 0rem;
   display: block;
+  margin: 1.5rem 0rem 0rem 0rem;
+  padding: 0;
+
+  font-size: 1.5rem;
   font-weight: 700;
-  font-family: 'Roboto', sans-serif;
-  /* border-bottom: .2rem solid #3f376f; */
+  font-family: var(--paragraph-font);
 }
 
 .personal-card-img {
@@ -171,11 +182,11 @@ html, body {
   border-radius: 50%;
   height: 7rem;
   width: 7rem;
-  background-color: aquamarine;
+  background-color: var(--background-darkest-color);
   background-image: url('myself.jpg');
   background-size: cover;
   background-position: center;
-  box-shadow: 5px 6px 15px  rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .personal-card-paragraph {
@@ -183,13 +194,13 @@ html, body {
 }
 
 .card {
-    display: flex;
-    border-radius: 10px;
-    margin-top: 1em;
-    height: 30vh;
-    width: 88%;
-    background: rgba(14, 10, 20, 0.5);
-    
+  display: flex;
+  border-radius: 10px;
+  margin-top: 1em;
+  height: 30vh;
+  width: 88%;
+  background: rgba(14, 10, 20, 0.5);
+
 }
 
 
@@ -201,6 +212,10 @@ html, body {
 
   .header-splashname {
     font-size: 6.5em;
+
+    background: -webkit-linear-gradient(white 20%, rgb(64, 56, 113) 40%, white 60%, #403871 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
 }
@@ -209,29 +224,171 @@ html, body {
 /* |||||||| ANIMATIONS |||||||| */
 
 @keyframes pulse {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    30% {
-      transform: scale3d(1.2, 1.2, 1.2);
-    }
-  
-    70% {
-      transform: scale3d(0.2, 0.2, 0.2);
-    }
-  
-    100% {
-      transform: scale3d(1, 1, 1);
-    }
+  0% {
+    transform: scale3d(1, 1, 1);
   }
-  
-  @keyframes glowing {
-    0% {
-      opacity: var(--star-brightness, 1);
-    }
-  
-    100% {
-      opacity: calc(var(--star-brightness, 1) * 0.5);
-    }
+
+  30% {
+    transform: scale3d(1.2, 1.2, 1.2);
   }
+
+  70% {
+    transform: scale3d(0.2, 0.2, 0.2);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    opacity: var(--star-brightness, 1);
+  }
+
+  100% {
+    opacity: calc(var(--star-brightness, 1) * 0.5);
+  }
+}
+
+.fade-in {
+  animation: fadeIn ease var(--standard-fade-speed);
+  -webkit-animation: fadeIn ease var(--standard-fade-speed);
+  -moz-animation: fadeIn ease var(--standard-fade-speed);
+  -o-animation: fadeIn ease var(--standard-fade-speed);
+  -ms-animation: fadeIn ease var(--standard-fade-speed);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-header {
+  animation: fadeInHeader ease var(--standard-fade-speed);
+  -webkit-animation: fadeInHeader ease var(--standard-fade-speed);
+  -moz-animation: fadeInHeader ease var(--standard-fade-speed);
+  -o-animation: fadeInHeader ease var(--standard-fade-speed);
+  -ms-animation: fadeInHeader ease var(--standard-fade-speed);
+}
+
+@keyframes fadeInHeader {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInHeader {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInHeader {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInHeader {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeInHeader {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
