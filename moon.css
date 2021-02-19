@@ -3,12 +3,25 @@
     
 }
 
+:root {
+    font-size: 16px;
+    --header-font: 'Bungee Hairline', cursive;
+    --paragraph-font: 'Roboto', sans-serif;
+  
+    --background-darkest-color: #0e0a14;
+    --background-middle-color: #3f376f;
+  
+    height: 100%;
+    --standard-fade-speed: 1.5s;
+    background: linear-gradient(180deg, var(--background-darkest-color) 0%, var(--background-middle-color) 100%);
+    color:white;
+}
+
 body {
+    
 margin: 0px;
 padding: 0px;
 border: 0px;
-
-font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -19,7 +32,6 @@ font-family: 'Montserrat', sans-serif;
     /* display: table;     */
     /* margin:20px auto; */
     text-align: center;    
-    color:black;
     padding: 5px 30px;
     }
     .moon-object [shadow]{
@@ -32,7 +44,7 @@ font-family: 'Montserrat', sans-serif;
     }
 
     .moon-quiz-form input[type=number] {
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 4px;
         -moz-appearance: textfield;
       }

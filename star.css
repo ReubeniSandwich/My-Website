@@ -146,7 +146,7 @@ body {
   justify-content: space-evenly;
   width: 100%;
   background: rgb(29, 29, 67);
-  background: linear-gradient(180deg, var(--background-darkest-color) 0%, rgba(63, 55, 111, 1) 100%);
+  background: linear-gradient(180deg, var(--background-darkest-color) 0%, var(--background-middle-color) 100%);
 }
 
 .personal-card {
@@ -154,7 +154,7 @@ body {
   flex-direction: column;
   position: relative;
   border-radius: 10px;
-  margin-top: 1em;
+  margin-top: 1rem;
   min-height: 30vh;
   width: 88%;
   border-top: .25rem solid rgba(63, 55, 111, 0.500);
@@ -191,12 +191,27 @@ body {
 
 .personal-card-paragraph {
   padding-right: 1rem;
+  padding-bottom: 3.5rem;
+}
+
+.personal-social.linkedin {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.personal-social.github {
+  position: absolute;
+  bottom: 1rem;
+  right: 4rem;
 }
 
 .card {
+  border-top: .25rem solid rgba(63, 55, 111, 0.500);
+
   display: flex;
   border-radius: 10px;
-  margin-top: 1em;
+  margin-top: 1rem;
   height: 30vh;
   width: 88%;
   background: rgba(14, 10, 20, 0.5);
@@ -210,12 +225,29 @@ body {
 /* \/\/ DESKTOP \/\/ */
 @media screen and (min-width: 1000px) {
 
+
+  /* Todo clean this up */
   .header-splashname {
     font-size: 6.5em;
 
     background: -webkit-linear-gradient(white 20%, rgb(64, 56, 113) 40%, white 60%, #403871 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .main-container {
+    flex-direction: row;
+    padding: 3rem 15vw 0 15vw;
+  }
+  
+  .personal-card {
+    width: 25vw;
+    margin: 0rem 0rem 2rem 0rem;
+  }
+  
+  .card {
+    width: 25vw;
+    margin: 0rem 0rem 2rem 0rem;
   }
 
 }
