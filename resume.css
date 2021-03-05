@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    --paragraph-font: 'Roboto', sans-serif;
+    --background-middle-color: #3f376f;
+    --background-dark-color: #1d1d43;
+    --background-darkest-color: #0e0a14;
+}
+
+body, html {
+    padding: 1rem 2rem;
+    background: linear-gradient(180deg, var(--background-darkest-color) 0%, var(--background-dark-color) 100%);
+    color: #D7D9CE;
+    overflow-x: hidden;
+    font-family: var(--paragraph-font);
+}
+
+.list {
+
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-right: 2rem;
+}
