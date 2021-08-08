@@ -40,6 +40,8 @@ body {
 
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
+
+  /* position: absolute; */
 }
 
 .svgStarCanvas {
@@ -61,16 +63,18 @@ body {
 
 .social.github {
   /* See the SVG file for it's animation options and colors */
-  position: absolute;
-  right: 3.5rem;
+  position: fixed;
+  right: 5rem;
   top: 1rem;
+  z-index: 9999;
 }
 
 .social.linkedin {
   /* See the SVG file for it's animation options and colors */
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 1rem;
+  z-index: 9999;
 }
 
 .header-splashname {
@@ -108,7 +112,7 @@ body {
   bottom: 19.8%;
 
   fill: var(--background-darkest-color);
-  z-index: 1000;
+  z-index: 100;
 }
 
 .header-blackbox.navbar {
@@ -147,6 +151,7 @@ body {
   width: 100%;
   background: rgb(29, 29, 67);
   background: linear-gradient(180deg, var(--background-darkest-color) 0%, var(--background-middle-color) 100%);
+  padding-bottom: 1.5rem;
 }
 
 .personal-card {
@@ -157,18 +162,18 @@ body {
   margin-top: 1rem;
   min-height: 30vh;
   width: 88%;
-  border-top: .25rem solid rgba(63, 55, 111, 0.500);
+  /* border-top: .25rem solid rgba(63, 55, 111, 0.500); */
   /* border-left: .2rem solid rgba(63, 55, 111, 0.800); */
   /* border-color: aliceblue; */
   background: rgba(14, 10, 20, 0.5);
   /* background-color: #68363d; */
-  padding-left: 7rem;
+  /* padding-left: 3rem; */
 }
 
 .personal-card-header {
   display: block;
-  margin: 1.5rem 0rem 0rem 0rem;
-  padding: 0;
+  /* margin: 5.5rem 0rem 0rem 0rem; */
+  padding-left: 7rem;
 
   font-size: 1.5rem;
   font-weight: 700;
@@ -190,8 +195,9 @@ body {
 }
 
 .personal-card-paragraph {
-  padding-right: 1rem;
-  padding-bottom: 3.5rem;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .personal-social.linkedin {

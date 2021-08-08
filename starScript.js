@@ -20,10 +20,10 @@ STAR_DATA.forEach(starCordinates => {
   const starContainer = document.createElementNS("http://www.w3.org/2000/svg", "g");
   const star = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   
-  const radius = 1.2 + Math.random();
+  const radius = 1.3 + Math.random();
   const delay = 100 +  Math.random() * 500;
   const duration = 3000 + Math.random() * 4000;
-  const brightness = 0.7 + Math.random() * 0.3;
+  const brightness = 1 + Math.random() * 0.3;
   
   starContainer.setAttribute("transform", `translate(${starCordinates.x}, ${starCordinates.y})`);
   star.classList.add("star");
