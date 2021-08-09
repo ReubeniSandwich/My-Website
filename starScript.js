@@ -5,15 +5,6 @@ let height = document.documentElement.clientHeight;
 console.log(width);
 console.log(height);
 
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-// let vh = document.documentElement.clientHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-// document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-// do we need this?
-// trees.setAttribute("style", `width:${width}px`);
-
-
 function generateRandomStars(maxWidth, maxHeight, amount) {
   let starList = [];
   
