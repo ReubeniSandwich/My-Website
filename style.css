@@ -1,96 +1,69 @@
 * {
   box-sizing: border-box;
+  /* --- DEBUGGING --- */
 
-  /* useful debugging */
-  /* background: #000 !important;
-    color: #0f0 !important;
-    outline: solid #f00 1px !important; */
+  /* background: #000 !important; */
+  /* color: #0f0 !important;
+  outline: solid #f00 1px !important; */
 }
 
 :root {
-  font-size: 16px;
-  --header-font: 'Bungee Hairline', cursive;
-  --paragraph-font: 'Roboto', sans-serif;
+  font-family: var(--main-font);
+  color: var(--main-white);
+  font-size: var(--default-font-size);
+  background-color: var(--background-darkest-color);
 
+  --header-splash-font: 'Bungee Hairline', cursive;
+  --main-font: 'Roboto', sans-serif;
+  --default-font-size: 16px;
+
+  --main-white: #D7D9CE;
+  --pure-white: #ffffff;
   --background-darkest-color: #0e0a14;
   --background-middle-color: #3f376f;
 
   --standard-fade-speed: 1.5s;
 }
 
-html,
 body {
   margin: 0px;
   padding: 0px;
-  color: #D7D9CE;
   overflow-x: hidden;
-  font-family: var(--paragraph-font);
 }
-
-
 
 /* |||||||| Header / SplashScreen |||||||| */
 
 .header-container {
-  /* Fallback for browsers that do not support Custom Properties */
-  height: 100vh;
-
-  /* standard calculated height. Offers more consistency between mobile and web */
-  height: calc(var(--vh, 1vh) * 100);
-
+  height: 80vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-
-  /* position: absolute; */
 }
 
-.svgStarCanvas {
-  display: block;
-  height: 80%;
-  width: 100%;
-  background: var(--background-middle-color);
-  background: linear-gradient(180deg, #1d1d43 0%, var(--background-middle-color) 70%, #68363d 100%);
-
-}
-
-/* Lots of code and inspiration from https://www.satellytes.com/blog/twinkling-night-sky-with-shooting-stars-made-in-svg */
-.star {
-  animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
-    glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
-  animation-delay: var(--star-animation-delay, 0);
-  fill: white;
-}
-
-.social.github {
-  /* See the SVG file for it's animation options and colors */
+.header-social-media-links {
   position: fixed;
-  right: 5rem;
-  top: 1rem;
   z-index: 9999;
+  top: 1rem;
+  right: 0rem;
+  /* fixes weird almost invisible padding */
+  font-size: 0;
 }
 
-.social.linkedin {
-  /* See the SVG file for it's animation options and colors */
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  z-index: 9999;
+.header-social-media-links * {
+  padding-right: .75rem;
 }
+
 
 .header-splashname {
   overflow-y: hidden;
+  z-index: 100;
   position: absolute;
   text-align: center;
   width: 100%;
   bottom: 60%;
 
-  /* background: -webkit-linear-gradient(white 80%, var(--background-middle-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
-  font-family: var(--header-font);
+  font-family: var(--header-splash-font);
   font-weight: 400;
-  font-size: 3.5em;
+  font-size: 3.5rem;
   line-height: 1em;
 
   /* makes text non-highlightable */
@@ -105,124 +78,117 @@ body {
   /* Standard */
 }
 
+.header-background {
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.starmap {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--background-middle-color);
+  background: linear-gradient(180deg, #1d1d43 0%, var(--background-middle-color) 70%, #68363d 100%);
+}
+
+/* https://www.satellytes.com/blog/twinkling-night-sky-with-shooting-stars-made-in-svg */
+.star {
+  animation: pulse var(--star-animation-duration) infinite backwards, glowing var(--star-animation-glow-duration) infinite alternate backwards;
+  animation-delay: var(--star-animation-delay);
+  fill: var(--pure-white);
+}
+
 .svg-tree-shape {
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
   min-height: 15vh;
-  bottom: 19.8%;
-
+  bottom: 0rem;
   fill: var(--background-darkest-color);
-  z-index: 100;
+  z-index: 9000;
 }
 
-.header-blackbox.navbar {
+.navigation-container, .navigation-container * {
   display: flex;
-  height: 20%;
+  align-items: center;
   justify-content: space-evenly;
   background-color: var(--background-darkest-color);
-  align-items: center;
-}
-
-.header-blackbox.navbar>a {
+  
   text-decoration: none;
-  color: #D7D9CE;
-  font-family: var(--paragraph-font);
+  outline: none;
+  color: var(--main-white);
 }
 
-.header-blackbox.navbar>a:hover {
-  color: white;
+.navigation-container *:hover {
+  color: var(--pure-white);
   transition-duration: .15s;
 }
 
-.header-blackbox.navbar:focus {
-  outline: none;
-}
 
 /* |||||||||| Main Page Content |||||||||| */
 
 .main-container {
-  /* padding is needed so that my profile pic doesnt show when the screen is fully scrolled up */
-  padding-top: 3rem;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  background: rgb(29, 29, 67);
-  background: linear-gradient(180deg, var(--background-darkest-color) 0%, var(--background-middle-color) 100%);
-  padding-bottom: 1.5rem;
-}
-
-.personal-card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 10px;
-  margin-top: 1rem;
-  min-height: 30vh;
-  width: 88%;
-  /* border-top: .25rem solid rgba(63, 55, 111, 0.500); */
-  /* border-left: .2rem solid rgba(63, 55, 111, 0.800); */
-  /* border-color: aliceblue; */
-  background: rgba(14, 10, 20, 0.5);
-  /* background-color: #68363d; */
-  /* padding-left: 3rem; */
-}
-
-.personal-card-header {
-  display: block;
-  /* margin: 5.5rem 0rem 0rem 0rem; */
-  padding-left: 7rem;
-
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-family: var(--paragraph-font);
-}
-
-.personal-card-img {
-  position: absolute;
-  top: -2rem;
-  left: -1.2rem;
-  border-radius: 50%;
-  height: 7rem;
-  width: 7rem;
-  background-color: var(--background-darkest-color);
-  background-image: url('myself.jpg');
-  background-size: cover;
-  background-position: center;
-  box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-.personal-card-paragraph {
-  padding-left: 2rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1rem;
-}
-
-.personal-social.linkedin {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
-
-.personal-social.github {
-  position: absolute;
-  bottom: 1rem;
-  right: 4rem;
+  background: linear-gradient(180deg, var(--background-darkest-color) 10%, var(--background-middle-color) 100%);
+  padding-top: 2rem;
 }
 
 .card {
-  border-top: .25rem solid rgba(63, 55, 111, 0.500);
-
   display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  min-height: 30vh;
   border-radius: 10px;
-  margin-top: 1rem;
-  height: 30vh;
-  width: 88%;
+  
+  margin: 0rem 0rem 2rem 0rem;
   background: rgba(14, 10, 20, 0.5);
-
 }
+
+.card-header {
+  display: block;
+  padding-left: 7rem;
+
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.card-paragraph {
+  padding: 0 1.5rem 1rem 2rem;
+}
+
+.card-img {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+  
+  top: -2rem;
+  left: -1.2rem;
+  background-color: var(--background-darkest-color);
+  box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-img.me {
+  background-image: url('myself.jpg');
+}
+
+.card-img.cat {
+  background-image: url('cat.jpg');
+}
+
+.card-img.me3 {
+  background-image: url('me3.jpg');
+}
+
 
 
 
@@ -231,8 +197,6 @@ body {
 /* \/\/ DESKTOP \/\/ */
 @media screen and (min-width: 1000px) {
 
-
-  /* Todo clean this up */
   .header-splashname {
     font-size: 6.5em;
 
@@ -246,16 +210,10 @@ body {
     padding: 3rem 15vw 0 15vw;
   }
   
-  .personal-card {
-    width: 25vw;
-    margin: 0rem 0rem 2rem 0rem;
-  }
-  
   .card {
     width: 25vw;
-    margin: 0rem 0rem 2rem 0rem;
+    font-size: 1.5rem;
   }
-
 }
 
 
@@ -281,11 +239,11 @@ body {
 
 @keyframes glowing {
   0% {
-    opacity: var(--star-brightness, 1);
+    opacity: var(--star-brightness);
   }
 
   100% {
-    opacity: calc(var(--star-brightness, 1) * 0.5);
+    opacity: calc(var(--star-brightness));
   }
 }
 
