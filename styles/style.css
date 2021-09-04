@@ -178,7 +178,7 @@ body {
 }
 
 .card-img.me {
-  background-image: url('myself.jpg');
+  background-image: url('/media/myself.jpg');
 }
 
 .card-img.cat {
@@ -186,7 +186,7 @@ body {
 }
 
 .card-img.me3 {
-  background-image: url('me3.jpg');
+  background-image: url('/media/me3.jpg');
 }
 
 
