@@ -37,12 +37,14 @@ html {
   scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden !important;
+  /* overflow-y: hidden; */
 }
 
 body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden !important;
+  /* overflow-y: hidden; */
 }
 
 /* |||||||| Header / SplashScreen |||||||| */
@@ -52,6 +54,7 @@ body {
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .header-social-media-links {
@@ -151,7 +154,8 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   background: linear-gradient(180deg, var(--background-darkest-color) 15%, var(--background-middle-color) 100%);
-  padding-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .card {
