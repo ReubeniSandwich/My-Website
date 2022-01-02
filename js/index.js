@@ -1,5 +1,7 @@
 let width = document.documentElement.clientWidth;
 let height = document.documentElement.clientHeight;
+console.log("width: " + width);
+console.log("height: " + height);
 
 function generateRandomStarLocations(maxWidth, maxHeight, amount) {
   let starList = [];
