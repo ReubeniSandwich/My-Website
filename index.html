@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reuben Isaias Sanchez</title>
     <meta name="Description" content="Reuben Isaias Sanchez in Charlotte">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header-container">
-        <span class="header-splashname fade-in-header">Reuben<br>Sanchez</span>
+    <header class="header-container" >
+        <span class="header-splashname tracking-in-expand">&nbsp;&nbsp;Reuben<br>Sanchez</span>
 
         <div class="header-social-media-links">
-            <object type="image/svg+xml" data="/media/social-media/github.svg" class="fade-in" alt="github logo">Your browser does not support SVGs</object>
-            <object type="image/svg+xml" data="/media/social-media/linkedin.svg" class="fade-in" alt="linkedin logo">Your browser does not support SVGs</object>
+            <object type="image/svg+xml" data="media/social-media/github.svg" class="fade-in" alt="github logo">Your browser does not support SVGs</object>
+            <object type="image/svg+xml" data="media/social-media/linkedin.svg" class="fade-in" alt="linkedin logo">Your browser does not support SVGs</object>
         </div>
 
         <!-- Tree Shapes -->
@@ -38,22 +39,33 @@
         </div>
     </header>
 
-    <nav class="navigation-container">
-        <!-- <a href="https://www.linkedin.com/in/reubenisanchez/" class="fade-in"><h2>LinkedIn</h2></a> -->
+    <nav class="navigation-container" href="#main-container">
+        <div class="scroll-down fade-in" href="#main-container"></div>
+        <span class="arrow-down fade-in" href="#main-container"></span>
     </nav>
 
-    <main class="main-container">
+    <main class="main-container" id="main-container">
         <span class="card">
             <div class="card-img me"></div>
-            <p class="card-header">Hellooo</p>
-            <p class="card-paragraph">I do stuff.</p>
+            <p class="card-header">Pictures I've Taken</p>
         </span>
-        <span class="card">
-            <div class="card-img me3"></div>
-            <p class="card-header">Fabulous</p>
-            <p class="card-paragraph">That's me.</p>
+
+        <span class="card" style="transform: rotate(5deg);">
+            <div class="card-img me"></div>
+            <p class="card-header">My Fav Music 2021</p>
         </span>
+
+        <span class="card" style="transform: rotate(-8deg);">
+            <div class="card-img me"></div>
+            <p class="card-header">Books I Enjoy</p>
+        </span>
+
+        
+        <span class="card" style="transform: rotate(27deg);">
+            <div class="card-img me"></div>
+            <p class="card-header">Miscellaneous</p>
+        </span> 
     </main>
 </body>
-<script type="text/javascript" src="/scripts/StarScript.js"></script>
+<script type="text/javascript" src="scripts/StarScript.js"></script>
 </html>
