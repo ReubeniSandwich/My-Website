@@ -1,0 +1,371 @@
+  * {
+  box-sizing: border-box;
+  /* --- DEBUGGING --- */
+
+  /* background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important; */
+}
+
+:root {
+  font-family: var(--main-font);
+  color: var(--main-white);
+  font-size: var(--default-font-size);
+  background-color: var(--background-darkest-color);
+
+  --main-font: 'Roboto', sans-serif;
+  --header-splash-font: 'Bubblegum Sans', cursive;
+  --default-font-size: 16px;
+  
+  --main-white: hsl(48, 89%, 93%);
+  --pure-white: #ffffff;
+  --background-darkest-color: hsl(199, 42%, 8%);
+  --background-middle-color: #14483C;
+
+  --text-shadow: hsla(0, 0%, 0%, 0.8);
+
+  --background-sky-darkest-color: #14483C;
+  --background-sky-middle-color: #77B187;
+  --background-sky-lighest-color: #C8E690;
+
+  --standard-fade-speed: 1.5s;
+
+  /* #0F1E25 #06292F #0B3835 #13463D #2D6349 #407354 #559B6D #58A071 #78B187 #C8E690 */
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  /* overflow-y: hidden; */
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden !important;
+  /* overflow-y: hidden; */
+}
+
+/* |||||||| Header / SplashScreen |||||||| */
+
+.header-container {
+  height: 80vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* arrow shape */
+.arrow-down:after {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  border-top: .2rem solid var(--main-white);
+  border-right:.2rem solid var(--main-white);
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  animation: blink 9s ease 0s infinite normal forwards;
+}
+
+.header-social-media-links {
+  position: fixed;
+  z-index: 9999;
+  top: 1rem;
+  right: 0rem;
+  /* fixes weird almost invisible padding */
+  font-size: 0;
+}
+
+.header-social-media-links * {
+  padding-right: .75rem;
+}
+
+
+.header-splashname {
+  position: absolute;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 100;
+  
+  font-family: var(--header-splash-font);
+  color: var(--main-white);
+  font-size: 3.5rem;
+  line-height: 3rem;
+  text-shadow: var(--text-shadow) .2rem .2rem;
+  transform: rotate(-4deg);
+
+  /* paddling left fixes overflow X, since the attribute DOESN'T WORK!! */
+  padding-left: 10%;
+  width: 90%;
+  bottom: 60%;
+
+  /* makes text non-highlightable */
+  cursor: default;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+.header-background {
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.starmap {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--background-sky-middle-color);
+  background: linear-gradient(180deg, var(--background-sky-darkest-color) 0%, var(--background-sky-middle-color) 65%, var(--background-sky-lighest-color) 100%);
+
+}
+
+/* https://www.satellytes.com/blog/twinkling-night-sky-with-shooting-stars-made-in-svg */
+.star {
+  animation: pulse var(--star-animation-duration) infinite backwards, glowing var(--star-animation-glow-duration) infinite alternate backwards;
+  animation-delay: var(--star-animation-delay);
+  fill: var(--pure-white);
+}
+
+.svg-tree-shape {
+  position: absolute;
+  overflow-x: hidden;
+  min-height: 15vh;
+  bottom: 0rem;
+  fill: var(--background-darkest-color);
+  z-index: 9000;
+}
+
+.navigation-container, .navigation-container * {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-darkest-color);
+  margin-top: 1rem;
+}
+
+
+/* |||||||||| Main Page Content |||||||||| */
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, var(--background-darkest-color) 15%, var(--background-middle-color) 100%);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card {
+  width: 16vh;
+  height: 24vh;
+  border-radius: 4px;
+  
+  margin: 0rem 1rem 2rem 1rem;
+  background: var(--main-white);
+  transform: rotate(-2deg);
+  box-shadow: var(--text-shadow) .1rem .1rem .9rem;
+}
+
+.card-header {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  color: var(--background-darkest-color);
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: -.1rem;
+}
+
+.card-img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 0px;
+  margin: .8rem .4rem .5rem .4rem;
+  height: 70%;
+}
+
+.card-img.me {
+  background-image: url('/images/Asheville.jpg');
+}
+
+
+
+/* |||||||| MEDIA QUERIES |||||||| */
+
+/* \/\/ DESKTOP \/\/ */
+@media screen and (min-width: 1000px) {
+
+
+  .card {
+    margin: 0rem 0rem 2rem 0rem;
+    width: 32vh;
+    height: 48vh;
+  }
+
+  .card-header {
+    font-size: 2;
+  }
+}
+
+
+
+/* |||||||| ANIMATIONS |||||||| */
+
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-1-1 20:56:28
+ * Licensed under FreeBSD License.
+ * ---------------------------------------------- */
+
+ .tracking-in-expand {
+	-webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+ 
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Stars */
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  70% {
+    transform: scale3d(0.2, 0.2, 0.2);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    opacity: var(--star-brightness);
+  }
+
+  100% {
+    opacity: calc(var(--star-brightness));
+  }
+}
+
+/* Standard fade in */
+.fade-in {
+  animation: fadeIn ease var(--standard-fade-speed);
+  -webkit-animation: fadeIn ease var(--standard-fade-speed);
+  -moz-animation: fadeIn ease var(--standard-fade-speed);
+  -o-animation: fadeIn ease var(--standard-fade-speed);
+  -ms-animation: fadeIn ease var(--standard-fade-speed);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
