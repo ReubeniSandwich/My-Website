@@ -21,7 +21,6 @@
   --background-sky-darkest-color: #14483C;
   --background-sky-middle-color: #77B187;
   --background-sky-lighest-color: #C8E690;
-
   --standard-fade-speed: 1.5s;
   /* #0F1E25 #06292F #0B3835 #13463D #2D6349 #407354 #559B6D #58A071 #78B187 #C8E690 */ }
 
@@ -44,6 +43,22 @@ body {
   min-height: -webkit-fill-available;
   overflow-x: hidden;
   overflow-y: hidden; }
+
+/* arrow shape */
+.arrow-down:after {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  border-top: 0.2rem solid var(--main-white);
+  border-right: 0.2rem solid var(--main-white);
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  animation: blink 9s ease 0s infinite normal forwards; }
 
 .header-social-media-links {
   position: fixed;
@@ -111,29 +126,13 @@ body {
   fill: var(--background-darkest-color);
   z-index: 9000; }
 
-.navigation-container {
+.navigation-container, .navigation-container * {
   height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--background-darkest-color);
   margin-top: 1rem; }
-
-  /* arrow shape */
-.arrow-down:after {
-  content: '';
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  margin: 0;
-  border-top: 0.2rem solid var(--main-white);
-  border-right: 0.2rem solid var(--main-white);
-  -moz-transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  animation: blink 9s ease 0s infinite normal forwards; }
 
 /* |||||||||| Main Page Content |||||||||| */
 .main-container {
@@ -173,10 +172,7 @@ body {
   height: 70%; }
 
 .card-img.me {
-  background-image: url("/media/Asheville.jpg"); }
-
-.card-img.me3 {
-  background-image: url("/media/me3.jpg"); }
+  background-image: url("/images/Asheville.jpg"); }
 
 /* |||||||| MEDIA QUERIES |||||||| */
 /* \/\/ DESKTOP \/\/ */
