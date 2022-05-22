@@ -1,3 +1,4 @@
+// Star Code
 let width = document.documentElement.clientWidth;
 let height = document.documentElement.clientHeight;
 console.log("width: " + width);
@@ -44,3 +45,143 @@ generateRandomStarLocations(width, height, starAmount).forEach(starCordinates =>
   starBox.appendChild(star);
   starContainer.appendChild(starBox);
 });
+
+
+// Dragging Photos Code
+
+const container = document.querySelector("#main-container");
+var dragItems = container.querySelectorAll("div.photo-card");
+
+dragItems.forEach(dragItem => {
+dragItem.addEventListener("mousedown", dragStart);
+dragItem.addEventListener("touchstart", dragStart);
+});
+
+function dragStart (event) {
+  if (event.type === "touchstart") {
+  // (1) prepare to moving: make absolute and on top by z-index
+  event.target.style.position = 'absolute';
+
+  // centers the ball at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    event.target.style.left = pageX - event.target.offsetWidth / 2 + 'px';
+    event.target.style.top = pageY - event.target.offsetHeight / 2 + 'px';
+  }
+  // move our absolutely positioned ball under the pointer
+  moveAt(event.touches[0].pageX, event.touches[0].pageY);
+  
+  function onMouseMove(event) {
+    moveAt(event.touches[0].pageX, event.touches[0].pageY);
+  }
+
+  // (2) move the ball on mousemove
+  document.addEventListener('touchmove', onMouseMove);
+
+  // (3) drop the ball, remove unneeded handlers
+  event.target.ontouchend = function() {
+    document.removeEventListener('touchmove', onMouseMove);
+    event.target.onmouseup = null;
+  };
+} else {
+  event.target.style.position = 'absolute';
+  // move it out of any current parents directly into body
+  // to make it positioned relative to the body
+  // document.body.append(ball);
+
+  // centers the card at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    event.target.style.left = pageX - event.target.offsetWidth / 2 + 'px';
+    event.target.style.top = pageY - event.target.offsetHeight / 2 + 'px';
+  }
+
+  // move our absolutely positioned card under the pointer
+  moveAt(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (2) move on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (3) drop, remove unneeded handlers
+  event.target.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    event.target.onmouseup = null;
+  };
+}
+
+};
+
+// document.addEventListener('mousemove', onMouseMove);
+// console.log(dragItems);
+// container.addEventListener("touchmove", drag);
+// container.addEventListener("mousemove", drag);
+
+
+// dragItems.forEach(dragItem => {
+// dragItem.addEventListener("touchstart", dragStart);
+// dragItem.addEventListener("touchend", dragEnd);
+// dragItem.addEventListener("touchmove", drag);
+
+// dragItem.addEventListener("mousedown", dragStart);
+// dragItem.addEventListener("mouseup", dragEnd);
+// dragItem.addEventListener("mousemove", drag);
+// });
+
+// dragItems.forEach(dragItem => {
+
+//   dragItem.active = false;
+//   dragItem.currentX = 0;
+//   dragItem.currentY = 0;
+//   dragItem.initialX = 0;
+//   dragItem.initialY = 0;
+//   dragItem.xOffset = 0;
+//   dragItem.yOffset = 0;
+// });
+
+// function dragStart(e) {
+
+//   if (e.type === "touchstart") {
+//     e.target.initialX = e.touches[0].clientX - e.target.xOffset;
+//     e.target.initialY = e.touches[0].clientY - e.target.yOffset;
+//   } else {
+//     e.target.initialX = e.clientX - e.target.xOffset;
+//     e.target.initialY = e.clientY - e.target.yOffset;
+//   }
+
+//   e.target.active = true
+// }
+
+// function dragEnd(e) {
+
+//   e.target.initialX = e.target.currentX
+//   e.target.initialY = e.target.currentY
+//   e.target.active = false
+//   // e.target.style.transform = "rotate(15deg)"
+// }
+
+// function drag(e) {
+//   if (e.target.active) {
+  
+//     e.preventDefault();
+  
+//     if (e.type === "touchmove") {
+//       e.target.currentX = e.touches[0].clientX - e.target.initialX;
+//       e.target.currentY = e.touches[0].clientY - e.target.initialY;
+//     } else {
+//       e.target.currentX = e.clientX - e.target.initialX;
+//       e.target.currentY = e.clientY - e.target.initialY;
+//     }
+//     e.target.xOffset = e.target.currentX;
+//     e.target.yOffset = e.target.currentY;
+
+//     setTranslate(e.target.currentX, e.target.currentY, e.target);
+//   }
+// }
+
+// function setTranslate(xPos, yPos, e) {
+//   e.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+// }
+
+
