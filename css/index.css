@@ -149,38 +149,29 @@ body {
   width: 16vh;
   height: 24vh;
   border-radius: 4px;
-  margin: 0rem 1rem 2rem 1rem;
+  padding: 1rem .5rem 3rem .5rem;
+  margin: 1rem 1rem 2rem 1rem;
   background: var(--main-white);
   box-shadow: var(--text-shadow) 0.1rem 0.1rem 0.9rem;
   z-index: 99999;
-  touch-action: none;
   user-select: none; }
-
-.photo-card.invisible {
-  visibility: hidden;
-  width: .1px; }
-
-.card-header {
-  font-family: 'Caveat', cursive;
-  text-align: center;
-  color: var(--background-darkest-color);
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1rem;
-  letter-spacing: -.1rem;
-  pointer-events: none; }
-
-.card-img {
-  background-size: cover;
-  background-position: center;
-  border-radius: 0px;
-  margin: .8rem .4rem .5rem .4rem;
-  height: 70%;
-  pointer-events: none; }
-
-.card-img.me {
-  background-image: url("/images/Asheville.jpg"); }
+  .photo-card .card-img {
+    pointer-events: none;
+    width: 100%;
+    height: 100%; }
+  .photo-card .card-header {
+    font-family: 'Caveat', cursive;
+    text-align: center;
+    color: var(--background-darkest-color);
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1rem;
+    letter-spacing: -.1rem;
+    pointer-events: none; }
+  .photo-card.invisible {
+    visibility: hidden;
+    width: 1px; }
 
 .card-drawer-container {
   font-size: 1.5rem;
@@ -202,12 +193,17 @@ body {
     height: 40vh; }
   .photo-card {
     margin: 0rem 4rem 4rem 0rem;
+    padding: 2rem 1rem 6rem 1rem;
     width: 16vh;
     height: 24vh; }
-  .card-drawer-container {
-    font-size: 3rem; }
-  .card-header {
-    font-size: 1.5rem; } }
+    .photo-card .card-header {
+      font-size: 2.3rem;
+      line-height: 2.2rem; }
+  .header-splashname {
+    font-size: 6rem;
+    padding-top: 1rem;
+    height: 10%;
+    line-height: 5rem; } }
 
 /* |||||||| ANIMATIONS |||||||| */
 @keyframes blink {
