@@ -282,3 +282,35 @@ body {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+
+
+
+
+/* BOOK LIST CODE BEGINS HERE */
+
+.book-object {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+
+.book-object .book-image {
+  display: block;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  margin-left: 5rem;
+}
+
+.book-object .book-title {
+}
+
+.book-object .book-text {
+  padding: .5rem 0rem 0rem 2rem;
+  margin: 0rem 0rem 0rem 0rem;
+}
+
+.book-object .book-title {
+  margin-top: 0rem;
+}
